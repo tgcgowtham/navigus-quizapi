@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Update Question</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="../css/shards.min.css"> -->
+</head>
+
+<body>
+    <div class="container my-5">
+        <h3> Update Question</h3>
+        <div class="card">
+            <div class="card-body">
+                <div class="col-md-10">
+                    <form action="#" th:action="@{/teacher/quiz/{id}/update/{qid}(id=${id},qid=${qid})}" th:object="${question}" method="post">
+                        <div class="row">
+                        
+                             <div class="form-group col-md-8">
+                                <label for="question" class="col-form-label">Question</label> <input type="text" th:field="*{question}" class="form-control" id="question" placeholder="question"> <span th:if="${#fields.hasErrors('question')}" th:errors="*{question}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="option1" class="col-form-label">Option 1</label> <input type="text" th:field="*{option1}" class="form-control" id="option1" placeholder="option1"> <span th:if="${#fields.hasErrors('option1')}" th:errors="*{option1}" class="text-danger"></span>
+                            </div>
+                             <div class="form-group col-md-8">
+                                <label for="option2" class="col-form-label">Option 2</label> <input type="text" th:field="*{option2}" class="form-control" id="option2" placeholder="option2"> <span th:if="${#fields.hasErrors('option2')}" th:errors="*{option2}" class="text-danger"></span>
+                            </div>
+                              <div class="form-group col-md-8">
+                                <label for="option3" class="col-form-label">Option 3</label> <input type="text" th:field="*{option3}" class="form-control" id="option3" placeholder="option3"> <span th:if="${#fields.hasErrors('option3')}" th:errors="*{option3}" class="text-danger"></span>
+                            </div>
+                              <div class="form-group col-md-8">
+                                <label for="option4" class="col-form-label">Option 4</label> <input type="text" th:field="*{option4}" class="form-control" id="option4" placeholder="option4"> <span th:if="${#fields.hasErrors('option4')}" th:errors="*{option4}" class="text-danger"></span>
+                            </div>
+                              <div class="form-group col-md-8">
+                                <label for="answer" class="col-form-label">Answer (example: 1,2,4 or 1,3 or 1 or 1,4 ) </label> <input type="text" th:field="*{answer}" class="form-control" id="answer" placeholder="Answer in given format"> <span th:if="${#fields.hasErrors('answer')}" th:errors="*{answer}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="marks" class="col-form-label">Marks</label> <input type="number" th:min="1" th:max="10" th:field="*{marks}" class="form-control" id="marks" placeholder="Enter Marks"> <span th:if="${#fields.hasErrors('marks')}" th:errors="*{marks}" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="submit" class="btn btn-primary" value="Update Question">
+                            </div>
+
+                            <div class="form-group col-md-8"></div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
