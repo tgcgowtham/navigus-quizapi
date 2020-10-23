@@ -41,6 +41,15 @@
                             <div class="form-group col-md-8">
                                 <label for="marks" class="col-form-label">Marks</label> <input type="number" th:min="1" th:max="10" th:field="*{marks}" class="form-control" id="marks" placeholder="Enter Marks"> <span th:if="${#fields.hasErrors('marks')}" th:errors="*{marks}" class="text-danger"></span>
                             </div>
+                            <div class="form-group col-md-8">
+                                <label for="hashtag1" class="col-form-label">#Tag1</label> <input type="text" th:field="*{hashtag1}" class="form-control" id="hashtag1" placeholder="#HashTag"> <span th:if="${#fields.hasErrors('hashtag1')}" th:errors="*{hashtag1}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="hashtag2" class="col-form-label">#Tag2</label> <input type="text" th:field="*{hashtag2}" class="form-control" id="hashtag2" placeholder="#HashTag"> <span th:if="${#fields.hasErrors('hashtag2')}" th:errors="*{hashtag2}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="time" class="col-form-label">Enter Time limit</label> <input type="text" th:field="*{time}" class="form-control" id="time" placeholder="Enter time limit in Minutes"> <span th:if="${#fields.hasErrors('time')}" th:errors="*{time}" class="text-danger"></span>
+                            </div> 
                             <div class="col-md-6">
                                 <input type="submit" class="btn btn-primary" value="Add Question">
                             </div>

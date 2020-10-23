@@ -26,7 +26,6 @@ public class QuizController {
 		model.addAttribute("id", id);
 		return "add-quiz";
 	}
-	
 	@GetMapping("/{id}/showall")
 	public String questions(@PathVariable ("id") int id, Model model) {
 		for(int i=0;i<TeacherController.courses.size();i++) {

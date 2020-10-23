@@ -24,8 +24,9 @@
                                 <label for="courseName" class="col-form-label">Course Name</label> <input type="text" th:field="*{courseName}" class="form-control" id="courseName" placeholder="Enter Course Name"> <span th:if="${#fields.hasErrors('courseName')}" th:errors="*{courseName}" class="text-danger"></span>
                             </div> 
                             <div class="form-group col-md-8">
-                                <label for="pass" class="col-form-label">Pass mark</label> <input type="text" th:field="*{pass}" class="form-control" id="pass" placeholder="Enter Pass mark"> <span th:if="${#fields.hasErrors('pass')}" th:errors="*{courseName}" class="text-danger"></span>
+                                <label for="pass" class="col-form-label">Pass mark</label> <input type="text" th:field="*{pass}" class="form-control" id="pass" placeholder="Enter Pass mark"> <span th:if="${#fields.hasErrors('pass')}" th:errors="*{pass}" class="text-danger"></span>
                             </div> 
+                           
                             <div class="col-md-6">
                                 <input type="submit" class="btn btn-primary" value="Add Course">
                             </div>

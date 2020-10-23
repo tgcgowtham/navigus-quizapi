@@ -12,19 +12,46 @@
 </head>
 
 <body>
+
+
     <div class="container my-5">
+    
+    <!-- Display the countdown timer in an element -->
+<h2 id="demo"></h2>
+<script th:inline="javascript">
+/*<![CDATA[*/
+    var time = /*[[${time}]]*/ 'default';
+    var countDownDate = new Date().getTime()+time*60000;
+   var x = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  document.getElementById("demo").innerHTML ="Time Left:- "+minutes + "m " + seconds + "s ";
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+/*]]>*/  
+}, 1000);
+</script>
+    
         <h3> Question</h3>
         <div class="card">
             <div class="card-body">
             <div th:switch="${question}" class="container my-5">
                 <div class="col-md-10">
                      <div th:case="*">
-                     <p th:text="'Question Marks:-    '+${question.marks}">marks</p>
+                     <p th:text="'Question Marks:- '+${question.marks}">marks</p>
+                     <b><h4 th:text="'#'+${question.hashtag1}"></h4></b>
+                     <b><h4 th:text="'#'+${question.hashtag2}"></h4></b>
                             <table class="table table-striped table-responsive-md">
                                 <thead>
                                     <tr>
                                         <th th:text="${question.question}">Question</th>
-                                       
+                                        
                                     </tr>
                                 </thead>
                                 <tbody>

@@ -39,9 +39,12 @@ public class StudentController {
 			model.addAttribute("courses", courses);
 			return "profile";
 		}
+		
 		model.addAttribute("qno", qno);
 		model.addAttribute("id", id);
 		model.addAttribute("question",course.getQuestions().get(qno));
+		model.addAttribute("time",course.getQuestions().get(qno).getTime());
+		System.out.println(course.getQuestions().get(qno).getTime());
 		return "showques";
 	}
 	
@@ -61,6 +64,7 @@ public class StudentController {
 		model.addAttribute("qno", qno);
 		model.addAttribute("id", id);
 		model.addAttribute("question",course.getQuestions().get(qno));
+		model.addAttribute("time",course.getQuestions().get(qno).getTime());
 		//System.out.println(q.getAnswer()+" "+question.getUanswer());
 		if(q.getAnswer().equals(question.getUanswer())) {
 			if(q.getDone()==0) {

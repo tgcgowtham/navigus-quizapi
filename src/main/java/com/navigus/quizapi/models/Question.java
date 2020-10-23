@@ -11,6 +11,9 @@ public class Question {
 	private String option4;
 	private String answer;
 	private String uanswer;
+	private String hashtag1="";
+	private String hashtag2="";
+	private String time;
 	private int done=0;
 	
 	public int getId() {
@@ -72,6 +75,24 @@ public class Question {
 	}
 	public void setDone(int done) {
 		this.done = done;
+	}
+	public String getHashtag1() {
+		return hashtag1;
+	}
+	public void setHashtag1(String hashtag1) {
+		this.hashtag1 = hashtag1;
+	}
+	public String getHashtag2() {
+		return hashtag2;
+	}
+	public void setHashtag2(String hashtag2) {
+		this.hashtag2 = hashtag2;
+	}
+	public String getTime() {
+		return time;
+	}
+	public void setTime(String time) {
+		this.time = time;
 	}
 
 	
